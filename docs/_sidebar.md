@@ -1,7 +1,8 @@
-- [API说明](README.md)
-- [修改记录](CHANGELOG.md)
+- [API说明](readme.md)
+- [修改记录](changelog.md)
 - API VERSION 2
-  - [基础说明](/client/BASE.md)
-  - [基础功能](/client/README.md)
+  - [基础说明](/client/base.md)
+  - [基础功能](/client/readme.md)
   - 班级API
-    - [基础信息](/client/classroom/BASIC.md)
+    - [基础信息](/client/classroom/basic.md)
+    - [班级资源](/client/classroom/resources.md)
