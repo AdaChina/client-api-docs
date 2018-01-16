@@ -1,4 +1,4 @@
-- [API说明](readme.md)
+- [API说明](README.md)
 - [修改记录](changelog.md)
 - API VERSION 2
   - [基础说明](/client/base.md)
@@ -6,3 +6,7 @@
   - 班级API
     - [基础信息](/client/classroom/basic.md)
     - [班级资源](/client/classroom/resources.md)
+  - [资讯API](/client/feeds.md)
+  - [通知API](/client/notifications.md)
+  - [验证API](/client/auths.md)
+  - [工具API](/client/tools.md)
