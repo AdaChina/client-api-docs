@@ -1,8 +1,8 @@
 # 班级资源
 
-## features
+## 班级简介列表
 
-班级简介列表，按顺序返回
+按顺序返回
 
 ```
 GET /classes/:class_id/features
@@ -59,9 +59,7 @@ Status: 200 OK
 }
 ```
 
-## selected_features
-
-首页班级简介列表
+## 首页班级简介列表
 
 ```
 GET /classes/:class_id/selected_features
@@ -101,9 +99,7 @@ GET /classes/:class_id/selected_features
 ]
 ```
 
-## features/comments
-
-某个班级简介的评论列表
+## 班级简介的评论列表
 
 ```
 GET /classes/:class_id/features/:feature_id/comments
@@ -145,9 +141,7 @@ Status: 200 OK
 }
 ```
 
-## photo_albums
-
-班级故事列表
+## 班级故事列表
 
 ```
 GET /classes/:class_id/photo_albums
@@ -194,9 +188,7 @@ Status: 200 OK
 }
 ```
 
-## photo_albums/photos
-
-某个班级故事的相片列表
+## 班级故事的相片列表
 
 ```
 GET /classes/:class_id/photo_albums/:photo_album_id/photos
@@ -250,9 +242,7 @@ Status: 200 OK
 }
 ```
 
-## selected_photos
-
-首页相片列表
+## 首页相片列表
 
 ```
 GET /classes/:class_id/selected_photos
@@ -294,9 +284,7 @@ Status: 200 OK
 ]
 ```
 
-## photos/comments
-
-某张张片的评论
+## 照片的评论
 
 ```
 GET /classes/:class_id/photos/:photo_id/comments
@@ -338,9 +326,7 @@ Status: 200 OK
 }
 ```
 
-## praises
-
-班级表彰列表
+## 班级表彰列表
 
 ```
 GET /classes/:class_id/praises
@@ -401,9 +387,7 @@ Status: 200 OK
 }
 ```
 
-## selected_praises
-
-首页班级表彰列表
+## 首页班级表彰列表
 
 ```
 GET /classes/:class_id/selected_praises
@@ -450,9 +434,7 @@ Status: 200 OK
 ]
 ```
 
-## praises/comments
-
-某个表彰的评论列表
+## 表彰的评论列表
 
 ```
 GET /classes/:class_id/praises/:praise_id/comments
@@ -494,9 +476,7 @@ Status: 200 OK
 }
 ```
 
-## praises/students
-
-某个表彰的学生列表
+## 表彰的学生列表
 
 ```
 GET /classes/:class_id/praises/:praise_id/students
@@ -540,9 +520,7 @@ Status: 200 OK
 }
 ```
 
-## client_notis
-
-家长通知列表
+## 家长通知列表
 
 ```
 GET /classes/:class_id/client_notis
@@ -591,9 +569,7 @@ Status: 200 OK
 }
 ```
 
-## client_notis/:id
-
-单个家长通知
+## 单个家长通知
 
 ```
 GET /api/classes/:id/client_notis/:client_noti_id
@@ -634,9 +610,7 @@ Status: 200 OK
 }
 ```
 
-## selected_client_notis
-
-首页展示当天的家长通知
+## 首页展示当天的家长通知
 
 ```
 GET /classes/:class_id/selected_client_notis
@@ -673,9 +647,7 @@ Status: 200 OK
 ]
 ```
 
-## memos (Demo功能)
-
-家长留言
+## 家长留言(Demo环境)
 
 ```
 GET /classes/:class_id/memos
@@ -717,9 +689,7 @@ Status: 200 OK
 }
 ```
 
-## memos/:student_id
-
-学生家长留言列表
+## 学生家长留言列表
 
 ```
 GET /api/classes/:id/memos/:student_id
@@ -805,9 +775,8 @@ Status: 404 Not Found
 }
 ```
 
-## memos/:student_id
+## 创建留言
 
-创建留言
 ```
 POST /api/classes/:id/memos/:student_id
 ```
