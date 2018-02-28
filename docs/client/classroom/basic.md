@@ -230,3 +230,49 @@ Status: 200 OK
   }
 ]
 ```
+
+## 班级荣誉
+
+返回所有班级荣誉，按学期归类，默认按学期日期倒序排列
+
+```
+GET /classes/:class_id/term_honor_events
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| term_name | 学期名称 |
+| honor_events | 班级荣誉列表 |
+| title | 班级荣誉名称 |
+| date | 班级荣誉时间 |
+
+**响应示例**
+
+```
+Status: 200 OK
+```
+
+```json
+[
+  {
+    "term_name": "三年级下学期",
+    "honor_events": [
+      {
+        "title": "班级荣誉",
+        "date": "2018-02-01"
+      }
+    ]
+  },
+  {
+    "term_name": "三年级上学期",
+    "honor_events": [
+      {
+        "title": "班级荣誉",
+        "date": "2017-09-01"
+      }
+    ]
+  }
+]
+```
