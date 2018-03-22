@@ -700,7 +700,9 @@ GET /api/classes/:id/memos/:student_id
 | 参数名 | 参数类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | student_id | string | 是 | 学生ID，路由参数 | 103 |
-| last_id | integer | 否 | 返回该留言ID后的新留言 | 19 |
+| start_id | integer | 否 | 起始留言(从新到旧)的id，为空时按最新留言返回 | 15 |
+| end_id | integer | 否 | 结束留言的id | 5 |
+| limit | integer | 否 | 返回留言最大数目，start_id和end_id都设置时，由最新开始往后返回直到最大数目，默认为10 | 10 |
 
 **响应字段**
 
