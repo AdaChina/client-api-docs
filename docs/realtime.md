@@ -440,7 +440,7 @@ echo -n "sn12345678:abcdef" | base64
 
 ### 班级留言红点更新
 
-事件: `memos_update`
+事件: `memos_unread`
 
 推送内容事例:
 
@@ -460,9 +460,11 @@ echo -n "sn12345678:abcdef" | base64
 
 ### 留言内容更新
 
-事件: `student_#{id}`，根据学生不同而变化
+客户端需要先进入room: https://socket.io/docs/rooms-and-namespaces/#rooms
 
-如: `student_48`
+room名称根据学生变化，为`student_#{id}`，如`student_11`
+
+事件: `memos_update`
 
 推送内容事例:
 
@@ -473,10 +475,4 @@ echo -n "sn12345678:abcdef" | base64
 }
 ```
 
-客户端响应示例:
-
-```json
-{
-  "ack": true
-}
-```
+客户端不需要响应。
