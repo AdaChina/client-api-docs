@@ -89,6 +89,64 @@ echo -n "sn12345678:abcdef" | base64
 
 身份认证成功后，会接受到服务器推送的事件和数据。
 
+## 聊天室
+
+### 加入聊天室
+
+客户端建立链接建立成功后，可以向服务器发送事件`join_room`，携带聊天室名称。
+
+示例：
+
+```json
+// emit: join_room
+
+{
+  "room": "room_name"
+}
+```
+
+加入聊天室结果由事件返回  
+
+认证成功返回`join_room:ok`，该事件不会携带返回数据。
+
+认证失败返回`join_room:fail`:
+
+```json
+// emit: join_room:fail
+
+{
+  "error_msg": "join room fail"
+}
+```
+
+### 离开聊天室
+
+客户端建立链接建立成功后，可以向服务器发送事件`leave_room`，携带聊天室名称。
+
+示例：
+
+```json
+// emit: join_room
+
+{
+  "room": "room_name"
+}
+```
+
+退出聊天室结果由事件返回  
+
+认证成功返回`leave_room:ok`，该事件不会携带返回数据。
+
+认证失败返回`leave_room:fail`:
+
+```json
+// emit: leave_room:fail
+
+{
+  "error_msg": "leave room fail"
+}
+```
+
 ## 实时推送
 
 ### 全屏信息发布
