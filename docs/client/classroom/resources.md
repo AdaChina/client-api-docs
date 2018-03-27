@@ -647,7 +647,7 @@ Status: 200 OK
 ]
 ```
 
-## 家长留言(Demo环境)
+## 家长留言
 
 ```
 GET /classes/:class_id/memos
@@ -819,7 +819,11 @@ POST /api/classes/:id/memos/:student_id
 | 参数名 | 参数类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | student_id | string | 是 | 学生ID，路由参数 | 103 |
-| video | string | 是 | 七牛视频文件Key | upload/abcd/dffa2 |
+| video | string | 否 | 七牛视频文件Key | upload/abcd/dffa2 |
+| audio | string | 否 | 七牛音频文件Key | upload/abcd/au3c |
+| text | string | 否 | 文字留言内容 | HelloWorld |
+
+***`video`, `audio`, `text` 必须提供其中一个参数***
 
 **响应字段**
 
@@ -872,5 +876,27 @@ Status: 404 Not Found
   "error": "student_not_found",
   "error_code": 115,
   "message": "学生不存在"
+}
+```
+```
+Status: 422 Unprocessable Entity
+```
+
+```json
+{
+  "error": "media_invalid",
+  "error_code": 116,
+  "message": "媒体文件无效或损坏"
+}
+```
+```
+Status: 422 Unprocessable Entity
+```
+
+```json
+{
+  "error": "memo_invalid",
+  "error_code": 117,
+  "message": "留言参数不正确"
 }
 ```

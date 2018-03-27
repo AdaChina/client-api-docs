@@ -15,6 +15,7 @@ GET /upload_token
 | type 参考值 | 描述 |
 | :--- | :--- |
 | video | 上传视频 |
+| audio | 上传音频 |
 | image | 上传图片（未启用） |
 
 **响应字段**
@@ -23,7 +24,7 @@ GET /upload_token
 | --- | --- |
 | key | 七牛上传凭证Key |
 | token | 七牛上传凭证Token |
-| ttl | 凭证自获取有效期限 |
+| ttl | 凭证自获取有效期限(秒) |
 
 **响应示例**
 
@@ -55,7 +56,7 @@ POST http://up-z2.qiniu.com
 | --- | --- | --- | --- | --- |
 | token | string | 是 | 七牛上传凭证Token | 123123...T0= |
 | key | string | 是 | 七牛上传凭证Key | upload......123 |
-| file | file | 是 | 视频文件 | 视频文件 |
+| file | file | 是 | 视频/音频文件 | abc.mp4 |
 
 **响应字段**
 
