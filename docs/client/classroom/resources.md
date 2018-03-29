@@ -714,6 +714,7 @@ GET /api/classes/:id/memos/:student_id
 | content | 留言内容 |
 | content_type | 留言媒体类型 |
 | video_thumb_url | 视频缩略图 |
+| image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
 | has_read | 是否已读 |
 | created_at | 创建时间 |
@@ -738,7 +739,8 @@ Status: 200 OK
       "id": 1,
       "content": "文字文字文字",
       "content_type": "text",
-      "video_thumb_url": null,
+      "video_thumb_url": "http://cdn.com/3aa?vframe/jpg/offset/3",
+      "image_thumb_url": null,
       "media_duration": null,
       "has_read": false,
       "sent_at": "2017-12-19T12:28:43+08:00",
@@ -752,6 +754,7 @@ Status: 200 OK
       "content": "http://cdn.com/3aa",
       "content_type": "video",
       "video_thumb_url": "http://cdn.com/3aa?vframe/jpg/offset/3",
+      "image_thumb_url": null,
       "media_duration": "02:30",
       "has_read": true,
       "sent_at": "2017-12-19T12:28:43+08:00",
@@ -833,6 +836,7 @@ POST /api/classes/:id/memos/:student_id
 | content | 留言内容 |
 | content_type | 留言媒体类型 |
 | video_thumb_url | 视频缩略图 |
+| image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
 | has_read | 是否已读 |
 | created_at | 创建时间 |
@@ -855,6 +859,7 @@ Status: 200 OK
   "content": "http://cdn.com/3aa",
   "content_type": "video",
   "video_thumb_url": "http://cdn.com/3aa?vframe/jpg/offset/3",
+  "image_thumb_url": null,
   "media_duration": "02:30",
   "has_read": true,
   "sent_at": "2017-12-19T12:28:43+08:00",
