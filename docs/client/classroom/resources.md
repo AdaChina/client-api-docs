@@ -716,6 +716,7 @@ GET /api/classes/:id/memos/:student_id
 | video_thumb_url | 视频缩略图 |
 | image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
+| media_duration_secs | 媒体时长(秒) |
 | has_read | 是否已读 |
 | created_at | 创建时间 |
 | sent_at | 发送时间 |
@@ -756,6 +757,7 @@ Status: 200 OK
       "video_thumb_url": "http://cdn.com/3aa?vframe/jpg/offset/3",
       "image_thumb_url": null,
       "media_duration": "02:30",
+      "media_duration_secs": "16",
       "has_read": true,
       "sent_at": "2017-12-19T12:28:43+08:00",
       "created_at": "2018-01-01 18:30",
@@ -861,6 +863,7 @@ Status: 200 OK
   "video_thumb_url": "http://cdn.com/3aa?vframe/jpg/offset/3",
   "image_thumb_url": null,
   "media_duration": "02:30",
+  "media_duration_secs": "16",
   "has_read": true,
   "sent_at": "2017-12-19T12:28:43+08:00",
   "created_at": "2018-01-01 18:30",
