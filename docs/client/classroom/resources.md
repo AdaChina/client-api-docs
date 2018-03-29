@@ -712,7 +712,7 @@ GET /api/classes/:id/memos/:student_id
 | total | 留言数量 |
 | id | 留言ID |
 | content | 留言内容 |
-| content_type | 留言媒体类型 |
+| content_type | 留言媒体类型(video, audio, text, image) |
 | video_thumb_url | 视频缩略图 |
 | image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
@@ -834,7 +834,7 @@ POST /api/classes/:id/memos/:student_id
 | --- | --- |
 | id | 留言ID |
 | content | 留言内容 |
-| content_type | 留言媒体类型 |
+| content_type | 留言媒体类型(video, audio, text, image) |
 | video_thumb_url | 视频缩略图 |
 | image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
