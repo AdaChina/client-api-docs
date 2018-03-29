@@ -840,6 +840,7 @@ POST /api/classes/:id/memos/:student_id
 | video_thumb_url | 视频缩略图 |
 | image_thumb_url | 图片缩略图 |
 | media_duration | 媒体时长 |
+| media_duration_secs | 媒体时长(秒) |
 | has_read | 是否已读 |
 | created_at | 创建时间 |
 | sent_at | 发送时间 |
