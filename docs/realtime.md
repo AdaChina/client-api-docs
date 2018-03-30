@@ -520,9 +520,9 @@ echo -n "sn12345678:abcdef" | base64
 
 客户端需要先进入room: https://socket.io/docs/rooms-and-namespaces/#rooms
 
-room名称根据学生和客户端变化，
-班牌端为`bp_student_#{id}`，如学生ID是11，room名称则为`bp_student_11`
-班牌端为`wxa_student_#{id}`，如学生ID是11，room名称则为`wxa_student_11`
+room名称根据学生和客户端变化：
+* 班牌端为`bp_student_#{id}`，如学生ID是11，room名称则为`bp_student_11`
+* 小程序为`wxa_student_#{id}`，如学生ID是11，room名称则为`wxa_student_11`
 
 事件: `memos_update`
 
@@ -537,7 +537,7 @@ room名称根据学生和客户端变化，
 
 客户端不需要响应。
 
-#### JavaScript实例
+#### 留言推送客户端实例
 ```
 var socket = io.connect('https://bpstaging.adachina.net', {path: "/socket/socket.io"});
 
