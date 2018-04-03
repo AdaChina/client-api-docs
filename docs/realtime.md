@@ -545,7 +545,7 @@ room名称根据学生和客户端变化：
 * 班牌端为`bp_student_#{id}`，如学生ID是11，room名称则为`bp_student_11`
 * 小程序为`wxa_student_#{id}`，如学生ID是11，room名称则为`wxa_student_11`
 
-事件: `memos_update`
+事件: `memos_read`
 
 推送内容事例:
 
