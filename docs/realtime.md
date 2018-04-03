@@ -529,9 +529,30 @@ room名称根据学生和客户端变化：
 推送内容事例:
 
 ```json
+/* 最新的消息ID */
 {
-  // 最新的消息id
   "memo_id": 20
+}
+```
+
+客户端不需要响应。
+
+### 留言已读状态更新
+
+客户端需要先进入room: https://socket.io/docs/rooms-and-namespaces/#rooms
+
+room名称根据学生和客户端变化：
+* 班牌端为`bp_student_#{id}`，如学生ID是11，room名称则为`bp_student_11`
+* 小程序为`wxa_student_#{id}`，如学生ID是11，room名称则为`wxa_student_11`
+
+事件: `memos_update`
+
+推送内容事例:
+
+```json
+/* 已读留言ID数组 */
+{
+  "memo_ids": [20, 22, 24]
 }
 ```
 
@@ -546,8 +567,13 @@ socket.on('connect', function(){
   socket.emit('join_room', { "room": "bp_student_101" });
 });
 
-// 接受推送
+// 接受新留言推送
 socket.on('memos_update', function(data){
+
+});
+
+// 接受留言已读状态推送
+socket.on('memos_read', function(data){
 
 });
 
