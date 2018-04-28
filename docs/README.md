@@ -25,10 +25,11 @@ https://bpstaging.adachina.net/api
   Content-Type:application/json
   ```
 
-  班牌应用请求时必须在header带上当前APP的版本号
+  班牌应用请求时必须在header带上当前APP的版本号和硬件版本号
 
   ```
   AdaCampus-App-Version:1.1.0
+  AdaCampus-HW-Version:M7-V1
   ```
 
   守护进程请求时必须在header带上当前守护进程版本号
