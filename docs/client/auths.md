@@ -1,9 +1,9 @@
-# 验证API
+# 验证API (未启用)
 
-## 学生刷卡验证身份(Demo环境)
+## 学生刷卡验证身份
 
 ```
-GET /api/student_card_auth
+GET /student_card_auth
 ```
 
 **请求参数**
