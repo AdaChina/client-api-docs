@@ -11,5 +11,6 @@
     - [班级资源](/client/classroom/resources.md)
   - [资讯API](/client/feeds.md)
   - [通知API](/client/notifications.md)
+  - [考勤API](/client/attendances.md)
   - [验证API](/client/auths.md)
   - [工具API](/client/tools.md)
