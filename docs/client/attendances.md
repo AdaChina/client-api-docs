@@ -110,7 +110,7 @@ Status: 200 OK
 ## 走班考勤统计
 
 ```
-GET /school_attendances
+GET /course_attendances
 ```
 
 **请求参数**
