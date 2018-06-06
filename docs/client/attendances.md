@@ -75,7 +75,7 @@ GET /school_attendances
 | 字段名 | 描述 | 参数类型 |
 | --- | --- | --- |
 | total | 班级学生总数 | integer |
-| ontime | 准时 | integer |
+| on-time | 准时 | integer |
 | late | 迟到 | integer |
 | absent | 未签到 | integer |
 | id | 学生ID | integer |
@@ -88,24 +88,6 @@ GET /school_attendances
 Status: 200 OK
 ```
 
-```json
-{
-  "student": {
-    "id": 1,
-    "name": "王小明",
-    "avatar": "https://cdn.adachina.net/image"
-  },
-  "results": [{
-    "state": "warning",
-    "message": "上学迟到"
-  },
-  {
-    "state": "success",
-    "message": "按时上课"
-  }],
-  "new_record": false
-}
-```
 ```json
 {
   "total": 20,
@@ -122,5 +104,69 @@ Status: 200 OK
       }
     }
   ]
+}
+```
+
+## 走班考勤统计
+
+```
+GET /school_attendances
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| date | string | 是 | 日期 | "2000-12-30" |
+| schedule_no | integer | 是 | 节次 | 5 |
+
+**响应字段**
+
+| 字段名 | 描述 | 参数类型 |
+| --- | --- | --- |
+| total | 班级学生总数 | integer |
+| on-time | 准时 | integer |
+| late | 迟到 | integer |
+| absent | 未签到 | integer |
+| id | 学生ID | integer |
+| name | 学生姓名 |  string |
+| avatar | 学生头像图片地址 | string |
+
+成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+{
+  "total": 20,
+  "ontime": 15,
+  "late": 3,
+  "absent": 2,
+  "details": [
+    {
+      "status": "absent",
+      "student": {
+        "id": 1,
+        "name": "王小明",
+        "avatar": "https://cdn.adachina.net/image"
+      }
+    }
+  ]
+}
+```
+
+失败响应
+
+```
+Status: 404 Forbidden
+```
+
+```json
+{
+  "error": "course_schedule_not_found",
+  "error_code": 118,
+  "message": "走班课不存在"
 }
 ```
