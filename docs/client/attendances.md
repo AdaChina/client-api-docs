@@ -125,7 +125,7 @@ GET /course_attendances
 | 字段名 | 描述 | 参数类型 |
 | --- | --- | --- |
 | total | 班级学生总数 | integer |
-| on-time | 准时 | integer |
+| ontime | 准时 | integer |
 | late | 迟到 | integer |
 | absent | 未签到 | integer |
 | id | 学生ID | integer |
