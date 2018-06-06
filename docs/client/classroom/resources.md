@@ -657,13 +657,10 @@ GET /classes/:class_id/memos
 
 | 字段名 | 描述 |
 | --- | --- |
-| has_unread | 班级是否有未读留言 |
-| unread_count | 班级未读留言总数 |
 | id | 学生ID |
 | card_number | 学生卡号 |
 | name | 学生姓名 |
 | avatar | 学生头像图片地址 |
-| has_unread | 学生是否有未读留言 |
 | unread_count | 未读留言数量 |
 
 **响应示例**
@@ -673,20 +670,22 @@ Status: 200 OK
 ```
 
 ```json
-{
-  "has_unread": true,
-  "unread_count": 3,
-  "items": [
-    {
-      "id": 1,
-      "card_number": 129418301,
-      "name": "王小明",
-      "avatar": "https://cdn.adachina.net/image",
-      "has_unread": false,
-      "unread_count": 0
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "card_number": 129418301,
+    "name": "王小明",
+    "avatar": "https://cdn.adachina.net/image",
+    "unread_count": 0
+  },
+  {
+    "id": 7,
+    "card_number": 12941152,
+    "name": "张文",
+    "avatar": "https://cdn.adachina.net/image",
+    "unread_count": 3
+  }
+]
 ```
 
 ## 学生家长留言列表
