@@ -10,7 +10,8 @@ POST /attendance
 
 | 参数名 | 参数类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
-| card_number | string | 是 | 学生卡号 | 12345678 |
+| card_number | string | 二选一 | 学生卡号 | 12345678 |
+| student_id | integer | 二选一 | 学生ID | 15 |
 
 **响应字段**
 
