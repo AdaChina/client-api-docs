@@ -54,3 +54,43 @@ Status: 200 OK
   }
 ]
 ```
+
+## 提交错误报告
+
+```
+POST /facial_recog_error
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| student_id | integer | 是 | 学生ID | 12345678 |
+| reason | string | 是 | 错误原因 | -- |
+
+**响应示例**
+
+成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+{
+  "report": "Received"
+}
+```
+失败响应
+
+```
+Status: 404 Forbidden
+```
+
+```json
+{
+  "error": "student_not_found",
+  "error_code": 115,
+  "message": "学生不存在"
+}
+```
