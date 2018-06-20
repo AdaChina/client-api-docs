@@ -17,7 +17,6 @@ GET /device
 | class | 设备绑定班级信息(内部字段可以expand，[参考](./classroom.md#class)), 若无绑定班级时为`null` |
 | power_schedule | 设备定时开关机日程表,默认返回从请求当天往后7天的数据 |
 | config | 设备功能配置 |
-| enable_sign_in | 是否启用签到功能 |
 
 **响应示例**
 
@@ -42,7 +41,27 @@ Status: 200 OK
         "security": "https://{api_endpoint}/teacers/1",
         "class_teacher": "https://{api_endpoint}/classes/1/class_teacher",
         "duty_students": "https://{api_endpoint}/classes/1/duty_students",
-        "course_schedules": "https://{api_endpoint}/classes/1/course_schedules"
+        "course_schedules": "https://{api_endpoint}/classes/1/course_schedules",
+        "config": {
+            "features": false,
+            "photo_albums": false,
+            "praises": false,
+            "feeds": false,
+            "feed_categories": [],
+            "dynamic_classes": true,
+            "notifications": false,
+            "course_schedules": false,
+            "client_notis": false,
+            "external_sections": [],
+            "authorization": {
+                "card": {"base": false},
+                "facial_recog": {"base": false, "extensions": ['human_detection']}
+            },
+            "school": {
+                "memo": {"base": false},
+                "attendance": {"base": false}}
+            },
+        }
     },
     "power_schedule": [
         {
@@ -70,9 +89,6 @@ Status: 200 OK
             "startup_at": "2017-03-01T23:57:00+08:00"
         }
     ],
-    "config": {
-        "enable_sign_in": true
-    }
 }
 ```
 
