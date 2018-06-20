@@ -57,7 +57,7 @@ Status: 200 OK
                 "card": {"base": false},
                 "facial_recog": {"base": false, "extensions": ['human_detection']}
             },
-            "school": {
+            "school_feature": {
                 "memo": {"base": false},
                 "attendance": {"base": false}}
             },
