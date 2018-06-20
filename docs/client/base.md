@@ -59,8 +59,8 @@ Status: 200 OK
             },
             "school_feature": {
                 "memo": {"base": false},
-                "attendance": {"base": false}}
-            },
+                "attendance": {"base": false}
+            }
         }
     },
     "power_schedule": [
