@@ -1,5 +1,6 @@
 - [API说明](README.md)
 - [修改记录](changelog.md)
+- [健康检查](health.md)
 - [升级维护](maintain.md)
 - [服务器推送](realtime.md)
 - [错误码](errorcode.md)
