@@ -36,6 +36,7 @@ GET /classes/:class_id
 | client_notis | 家长通知 |
 | external_sections | 外链 |
 | memos | 家长留言 |
+| exam_events | 考场安排 |
 
 **响应示例**
 
@@ -70,6 +71,7 @@ Status: 200 OK
     "client_notis": false,
     "memos": true,
     "feeds": true,
+    "exam_events": true,
     "feed_categories": [
       {
         "feed_category_id": 1,
