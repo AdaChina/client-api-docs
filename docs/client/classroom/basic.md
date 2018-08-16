@@ -14,6 +14,7 @@ GET /classes/:class_id
 | honor | 是否表彰班级 |
 | honor_image_url | 班级评比图片，没有时为`null` |
 | honor_events | 班级评比 |
+| exam_events | 考场安排 |
 | config | 班级功能配置 |
 | class_teacher | 班主任信息(expand)，[参考](#classteacher) |
 | security | 安全负责人信息(expand)，[参考](#classteacher) |
@@ -36,7 +37,6 @@ GET /classes/:class_id
 | client_notis | 家长通知 |
 | external_sections | 外链 |
 | memos | 家长留言 |
-| exam_events | 考场安排 |
 
 **响应示例**
 
@@ -56,7 +56,8 @@ Status: 200 OK
       "image_url": 'https://cdn.adachina.net/img1',
       "image_url": 'https://cdn.adachina.net/img2'
     }
-  ]
+  ],
+  "exam_events": true,
   "class_teacher": "_",
   "course_schedules": "_",
   "extra": {
@@ -71,7 +72,6 @@ Status: 200 OK
     "client_notis": false,
     "memos": true,
     "feeds": true,
-    "exam_events": true,
     "feed_categories": [
       {
         "feed_category_id": 1,
