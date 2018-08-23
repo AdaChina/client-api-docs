@@ -232,9 +232,12 @@ POST /report_face_status
 ```
 Status: 201 created
 ```
+
+```json
 {
   "result": "received"
 }
+```
 
 失败响应:
 
