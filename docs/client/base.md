@@ -207,3 +207,45 @@ Status: 403 Forbidden
     "message": "解除绑定班级失败"
 }
 ```
+
+## 人脸库同步状态反馈
+
+```
+POST /report_face_status
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| result | string | 是 | 同步结果 | success |
+
+| result 参考值| 描述 |
+| -- | -- |
+| success | 同步成功 |
+| error | 同步出错 |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+{
+  "result": "received"
+}
+
+失败响应:
+
+```
+Status: 400 Bad Request
+```
+
+```json
+{
+    "error": "face_status_invalid",
+    "error_code": 119,
+    "message": "无法识别结果参数"
+}
+```
