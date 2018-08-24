@@ -219,6 +219,8 @@ POST /report_face_status
 | 参数名 | 参数类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | result | string | 是 | 同步结果 | success |
+| success_ids | string | 否 | 成功学生ID列表 | "1,2,3" |
+| failure_ids | string | 否 | 失败学生ID列表 | "4,5,6" |
 
 | result 参考值| 描述 |
 | -- | -- |
