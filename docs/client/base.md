@@ -11,6 +11,10 @@ GET /device
 | 字段名 | 描述 |
 | --- | --- |
 | serial_no | 设备序列号 |
+| iot: id | 阿里物联网 ID |
+| iot: secret | 阿里物联网设备 Secret |
+| iot: product_key |  阿里物联网 Product Keys |
+| iot: face_license | 是否授权注册人脸识别 |
 | school | 设备绑定学校信息，若无绑定学校时为`null` |
 | badge_url | 校徽图片url，没有时为`null` |
 | assistant_image_url | 小艾图片 |
@@ -27,6 +31,12 @@ Status: 200 OK
 ```json
 {
     "serial_no": "sn12345678",
+    "iot": {
+      "id": "JIO#GJJ$SA",
+      "secret": "KKEEOO#$KA",
+      "product_key": "ABCDKEY",
+      "face_license": "false"
+    },
     "school": {
         "id": 1,
         "name": "XX中学",
