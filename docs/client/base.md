@@ -102,6 +102,34 @@ Status: 200 OK
 }
 ```
 
+## 设备定时开关机时间（第二版）
+
+```
+GET /device/power_schedule
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| startup_at | 开机时间(24小时制) |
+| shutdown_at | 关机时间(24小时制) |
+| effective_days | 有效日(星期一: 1, 星期日: 7) |
+
+**响应示例**
+
+```
+Status: 200 OK
+```
+
+```json
+{
+    "startup_at": "09:30",
+    "shutdown_at": "22:30",
+    "effective_days": [1,2,3,4,5,6,7]
+}
+```
+
 ## 设备可绑定的班级列表
 
 班级信息只提供id,类型和班级名
