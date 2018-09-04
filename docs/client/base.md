@@ -292,3 +292,37 @@ Status: 400 Bad Request
     "message": "无法识别结果参数"
 }
 ```
+
+## 定时开关机状态反馈
+
+```
+POST /report_power_schedule_status
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| result | string | 是 | 设置结果 | success |
+| info | string | 否 | 调试参考信息 | time: 20181215, startup: 0700, shutdown: 1800 |
+
+| result 参考值| 描述 |
+| -- | -- |
+| success | 设置成功 |
+| failure | 设置失败 |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+
+```json
+{
+  "result": "received",
+  "status": "power_schedule_success",
+  "info": "time: 20181215, startup: 0700, shutdown: 1800"
+}
+```
