@@ -64,12 +64,14 @@ Status: 200 OK
             "client_notis": false,
             "external_sections": [],
             "authorization": {
-                "card": {"base": false},
-                "facial_recog": {"base": false, "extensions": ['human_detection']}
+                "card": false,
+                "facial_recog": true,
+                "facial_recog_extensions": ["human_detection"],
+                "facial_recog_exts": {"human_detection": true, "detection_threshold": "60.5"}
             },
             "school_feature": {
-                "memo": {"base": false},
-                "attendance": {"base": false}
+                "memo": true,
+                "attendance": false
             }
         }
     },
