@@ -328,3 +328,35 @@ Status: 201 created
   "info": "time: 20181215, startup: 0700, shutdown: 1800"
 }
 ```
+
+## 设备日志上报
+
+```
+POST /debug_log
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| file | string | 是 | 七牛日志文件 Key | upload.....2134 |
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| file | 日志文件URL |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+
+```json
+{
+  "file": "https://cdn.com/file.log",
+}
+```

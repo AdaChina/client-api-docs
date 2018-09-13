@@ -88,6 +88,7 @@ Status: 200 OK
         "link": "example.com",
         "image_url": "https://cdn.adachina.net/image.png",
         "icon_url": "https://cdn.adachina.net/icon.png",
+        "partner": false
       },
       //...
     ]

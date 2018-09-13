@@ -17,6 +17,7 @@ GET /upload_token
 | video | 上传视频 |
 | audio | 上传音频 |
 | image | 上传图片（未启用） |
+| file  | 上传日志 |
 
 **响应字段**
 
