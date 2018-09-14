@@ -340,12 +340,18 @@ POST /debug_log
 | 参数名 | 参数类型 | 必填 | 描述 | 示例 |
 | --- | --- | --- | --- | --- |
 | file | string | 是 | 七牛日志文件 Key | upload.....2134 |
+| batch | string | 是 | 日志批次 | 29be12dcdac6739aec8c86f7fad8fbf6 |
+| log_type | string | 是 | 日志类型 | system |
 
 **响应字段**
 
 | 字段名 | 描述 |
 | --- | --- |
+| result | 上传结果 |
 | file | 日志文件URL |
+| batch | 日志批次 |
+| log_type | 日志类型 |
+
 
 **响应示例**
 
@@ -357,6 +363,9 @@ Status: 201 created
 
 ```json
 {
+  "result": "received",
   "file": "https://cdn.com/file.log",
+  "batch": "29be12dcdac6739aec8c86f7fad8fbf6",
+  "log_type": "system"
 }
 ```

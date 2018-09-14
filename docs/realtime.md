@@ -580,3 +580,110 @@ socket.on('memos_read', function(data){
 // 离开房间
 socket.emit('leave_room', { "room": "bp_student_101" });
 ```
+
+### 清空人脸库
+
+事件: `purge_face_data`
+
+终端收到事件后清空人脸库
+
+推送内容示例:
+
+```json
+// 空
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
+
+### 报告人脸库人脸数量
+
+事件: `face_data_count`
+
+终端收到事件后响应人脸库数量
+
+推送内容示例:
+
+```json
+// 空
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true,
+  "count": 56
+}
+```
+
+### 上传APP应用日志
+
+事件: `app_log_upload`
+
+终端收到事件后上传APP应用日志
+
+推送内容示例:
+
+```json
+{
+  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
+}
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
+
+### 上传系统应用日志
+
+事件: `system_log_upload`
+
+终端收到事件后上传APP应用日志
+
+推送内容示例:
+
+```json
+{
+  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
+}
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
+
+### 上传定时开关机应用日志
+
+事件: `power_schedule_log_upload`
+
+终端收到事件后上传APP应用日志
+
+推送内容示例:
+
+```json
+{
+  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
+}
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
