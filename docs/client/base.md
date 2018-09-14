@@ -343,6 +343,12 @@ POST /debug_log
 | batch | string | 是 | 日志批次 | 29be12dcdac6739aec8c86f7fad8fbf6 |
 | log_type | string | 是 | 日志类型 | system |
 
+| log_type 参考值| 描述 |
+| -- | -- |
+| app | 应用日志 |
+| system | 系统日志 |
+| power_schedule | 定时开关机日志 |
+
 **响应字段**
 
 | 字段名 | 描述 |
@@ -351,7 +357,6 @@ POST /debug_log
 | file | 日志文件URL |
 | batch | 日志批次 |
 | log_type | 日志类型 |
-
 
 **响应示例**
 
