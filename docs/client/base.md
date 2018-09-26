@@ -64,12 +64,14 @@ Status: 200 OK
             "client_notis": false,
             "external_sections": [],
             "authorization": {
-                "card": {"base": false},
-                "facial_recog": {"base": false, "extensions": ['human_detection']}
+                "card": false,
+                "facial_recog": true,
+                "facial_recog_extensions": ["human_detection"],
+                "facial_recog_exts": {"human_detection": true, "detection_threshold": "60.5"}
             },
             "school_feature": {
-                "memo": {"base": false},
-                "attendance": {"base": false}
+                "memo": true,
+                "attendance": false
             }
         }
     },
@@ -99,6 +101,34 @@ Status: 200 OK
             "startup_at": "2017-03-01T23:57:00+08:00"
         }
     ],
+}
+```
+
+## 设备定时开关机时间（第二版）
+
+```
+GET /device/power_schedule
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| startup_at | 开机时间(24小时制) |
+| shutdown_at | 关机时间(24小时制) |
+| effective_days | 有效日(星期一: 1, 星期日: 7) |
+
+**响应示例**
+
+```
+Status: 200 OK
+```
+
+```json
+{
+    "startup_at": "09:30",
+    "shutdown_at": "22:30",
+    "effective_days": [1,2,3,4,5,6,7]
 }
 ```
 
@@ -262,5 +292,85 @@ Status: 400 Bad Request
     "error": "face_status_invalid",
     "error_code": 119,
     "message": "无法识别结果参数"
+}
+```
+
+## 定时开关机状态反馈
+
+```
+POST /report_power_schedule_status
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| result | string | 是 | 设置结果 | success |
+| info | string | 否 | 调试参考信息 | time: 20181215, startup: 0700, shutdown: 1800 |
+
+| result 参考值| 描述 |
+| -- | -- |
+| success | 设置成功 |
+| failure | 设置失败 |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+
+```json
+{
+  "result": "received",
+  "status": "power_schedule_success",
+  "info": "time: 20181215, startup: 0700, shutdown: 1800"
+}
+```
+
+## 设备日志上报
+
+```
+POST /debug_log
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| file | string | 是 | 七牛日志文件 Key | upload.....2134 |
+| batch | string | 是 | 日志批次 | 29be12dcdac6739aec8c86f7fad8fbf6 |
+| log_type | string | 是 | 日志类型 | system |
+
+| log_type 参考值| 描述 |
+| -- | -- |
+| app | 应用日志 |
+| system | 系统日志 |
+| power_schedule | 定时开关机日志 |
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| result | 上传结果 |
+| file | 日志文件URL |
+| batch | 日志批次 |
+| log_type | 日志类型 |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+
+```json
+{
+  "result": "received",
+  "file": "https://cdn.com/file.log",
+  "batch": "29be12dcdac6739aec8c86f7fad8fbf6",
+  "log_type": "system"
 }
 ```
