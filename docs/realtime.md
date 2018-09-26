@@ -500,7 +500,7 @@ echo -n "sn12345678:abcdef" | base64
 
 事件: `memos_unread`
 
-推送内容事例:
+推送内容示例:
 
 ```json
 {
@@ -526,7 +526,7 @@ room名称根据学生和客户端变化：
 
 事件: `memos_update`
 
-推送内容事例:
+推送内容示例:
 
 ```json
 /* 最新的消息ID */
@@ -547,7 +547,7 @@ room名称根据学生和客户端变化：
 
 事件: `memos_read`
 
-推送内容事例:
+推送内容示例:
 
 ```json
 /* 已读留言ID数组 */
@@ -579,4 +579,77 @@ socket.on('memos_read', function(data){
 
 // 离开房间
 socket.emit('leave_room', { "room": "bp_student_101" });
+```
+
+### 设备远程调试(班牌端)
+
+事件: `enable_remote_cmd`
+
+接受到这个事件推送，代表设备需要进入房间，并准备接受远程命令推送。
+
+推送内容示例:
+
+```json
+/* 需要进入的房间 */
+{
+  "room": "AC4178234415"
+}
+```
+
+事件: `disable_remote_cmd`
+
+接受到这个事件推送，代表设备可以推出房间。
+
+推送内容示例:
+
+```json
+/* 需要退出的房间 */
+{
+  "room": "AC4178234415"
+}
+```
+
+room名称为设备序列号：
+* 如设备序列号为`AC4178234415`，room名称则为`AC4178234415`
+
+接受以下事件推送需要先进入房间
+
+事件: `remote_cmd`
+
+推送内容示例:
+
+```json
+/* 加密后的命令 */
+{
+  "encrypted_cmd": "a.b.c"
+}
+```
+
+事件: `cmd_result`
+
+推送内容示例:
+
+```json
+/* 命令执行后返回 */
+{
+  "result": "ok"
+}
+```
+
+#### 设备远程调试网页端实例
+```
+var socket = io.connect('https://bpstaging.adachina.net', {path: "/socket/socket.io"});
+
+// 加入房间
+socket.on('connect', function(){
+  socket.emit('join_room', { "room": "AC4178234415" });
+});
+
+// 接受命令执行反馈
+socket.on('cmd_result', function(data){
+
+});
+
+// 离开房间
+socket.emit('leave_room', { "room": "AC4178234415" });
 ```
