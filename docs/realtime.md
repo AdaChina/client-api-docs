@@ -581,34 +581,12 @@ socket.on('memos_read', function(data){
 socket.emit('leave_room', { "room": "bp_student_101" });
 ```
 
-<<<<<<< HEAD
-### 设备远程调试(班牌端)
-
-事件: `enable_remote_cmd`
-
-接受到这个事件推送，代表设备需要进入房间，并准备接受远程命令推送。
-=======
 ### 清空人脸库
 
 事件: `purge_face_data`
 
-终端收到事件后清空人脸库
->>>>>>> cb92cc7649ec023b3ddb4c500a39b18b806db09d
-
 推送内容示例:
-
 ```json
-<<<<<<< HEAD
-/* 需要进入的房间 */
-{
-  "room": "AC4178234415"
-}
-```
-
-事件: `disable_remote_cmd`
-
-接受到这个事件推送，代表设备可以推出房间。
-=======
 // 空
 ```
 
@@ -625,25 +603,9 @@ socket.emit('leave_room', { "room": "bp_student_101" });
 事件: `face_data_count`
 
 终端收到事件后响应人脸库数量
->>>>>>> cb92cc7649ec023b3ddb4c500a39b18b806db09d
 
 推送内容示例:
-
 ```json
-<<<<<<< HEAD
-/* 需要退出的房间 */
-{
-  "room": "AC4178234415"
-}
-```
-
-room名称为设备序列号：
-* 如设备序列号为`AC4178234415`，room名称则为`AC4178234415`
-
-接受以下事件推送需要先进入房间
-
-事件: `remote_cmd`
-=======
 // 空
 ```
 
@@ -661,23 +623,10 @@ room名称为设备序列号：
 事件: `app_log_upload`
 
 终端收到事件后上传APP应用日志
->>>>>>> cb92cc7649ec023b3ddb4c500a39b18b806db09d
 
 推送内容示例:
-
 ```json
-<<<<<<< HEAD
-/* 加密后的命令 */
-{
-  "encrypted_cmd": "a.b.c"
-}
-```
-
-事件: `cmd_result`
-=======
-{
-  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
-}
+{ "batch": "29be12dcdac6739aec8c86f7fad8fbf6" }
 ```
 
 客户端响应示例:
@@ -693,12 +642,89 @@ room名称为设备序列号：
 事件: `system_log_upload`
 
 终端收到事件后上传APP应用日志
->>>>>>> cb92cc7649ec023b3ddb4c500a39b18b806db09d
+
+推送内容示例:
+```json
+{ "batch": "29be12dcdac6739aec8c86f7fad8fbf6" }
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
+
+### 上传定时开关机应用日志
+
+事件: `system_log_upload`
+
+终端收到事件后上传开关机应用日志
+
+推送内容示例:
+```json
+{ "batch": "29be12dcdac6739aec8c86f7fad8fbf6" }
+```
+
+客户端响应示例:
+
+```json
+{
+  "ack": true
+}
+```
+
+
+### 设备远程调试(班牌端)
+
+事件: `enable_remote_cmd`
+
+接受到这个事件推送，代表设备需要进入房间，并准备接受远程命令推送。
 
 推送内容示例:
 
 ```json
-<<<<<<< HEAD
+/* 需要进入的房间 */
+{
+  "room": "AC4178234415"
+}
+```
+
+事件: `disable_remote_cmd`
+
+接受到这个事件推送，代表设备可以推出房间。
+
+推送内容示例:
+
+```json
+/* 需要退出的房间 */
+{
+  "room": "AC4178234415"
+}
+```
+
+room名称为设备序列号：
+* 如设备序列号为`AC4178234415`，room名称则为`AC4178234415`
+
+接受以下事件推送需要先进入房间
+
+事件: `remote_cmd`
+
+推送内容示例:
+
+```json
+/* 加密后的命令 */
+{
+  "encrypted_cmd": "a.b.c"
+}
+```
+
+事件: `cmd_result`
+
+推送内容示例:
+
+```json
 /* 命令执行后返回 */
 {
   "result": "ok"
@@ -722,39 +748,3 @@ socket.on('cmd_result', function(data){
 // 离开房间
 socket.emit('leave_room', { "room": "AC4178234415" });
 ```
-=======
-{
-  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
-}
-```
-
-客户端响应示例:
-
-```json
-{
-  "ack": true
-}
-```
-
-### 上传定时开关机应用日志
-
-事件: `power_schedule_log_upload`
-
-终端收到事件后上传APP应用日志
-
-推送内容示例:
-
-```json
-{
-  "batch": "29be12dcdac6739aec8c86f7fad8fbf6"
-}
-```
-
-客户端响应示例:
-
-```json
-{
-  "ack": true
-}
-```
->>>>>>> cb92cc7649ec023b3ddb4c500a39b18b806db09d
