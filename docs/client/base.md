@@ -374,3 +374,43 @@ Status: 201 created
   "log_type": "system"
 }
 ```
+
+## 人脸匹配数据上报
+
+```
+POST /face_match_event
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| match_data | string | 是 | 人脸匹配数据 | [{"similarity": 0.615, "student_id": 12345}, {"similarity": 0.515, "student_id": 99999}] |
+| matched_at | integer | 是 | 事件时间(Unix时间戳) | 1539158891 |
+| captured_image | string | 否 | 七牛图片文件 Key | upload.....2134 |
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| result | 上传结果 |
+| matched_at | 日志文件URL |
+| captured_image | 日志批次 |
+| match_data | 人脸匹配数据 |
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 201 created
+```
+
+```json
+{
+  "result": "received",
+  "matched_at": "2018-10-10T16:11:40+08:00",
+  "captured_image": "https://cdn.com/file.png",
+  "match_data": '[{"similarity": 0.615, "student_id": 12345}, {"similarity": 0.515, "student_id": 99999}]'
+}
+```
