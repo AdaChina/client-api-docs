@@ -16,3 +16,4 @@
   - [验证API](/client/auths.md)
   - [工具API](/client/tools.md)
   - [人脸识别API](/client/facials.md)
+  - [个人中心API](/client/personals.md)
