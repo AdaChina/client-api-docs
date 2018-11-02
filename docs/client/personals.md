@@ -129,3 +129,90 @@ Status: 200 OK
   ]
 }
 ```
+
+## 学生每日课程表信息
+
+默认返回本周课程数组，可能会出现课程信息为空的情况，但是节次不会为空
+
+```
+GET /personal/:student_id/course_schedules
+```
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| from_date | integer | 否 | 开始日期，按照iso8601标准 | 1 |
+| to_date | integer | 否 | 结束日期，按照iso8601标准 | 10 |
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| date | 课程表日期 |
+| wday_text | 星期 |
+| courses | 课程列表 |
+| id | 课程id |
+| name | 课程名称 |
+| schedule_no | 课程节次 |
+| type | 课程类型(固定班,走班,无课): ['static', 'dynamic', 'empty'] |
+| course_time | 课程时间段 |
+| sign_time | 签到时间段 |
+| started_at | 时间段开始时间 |
+| ended_at | 时间段结束时间 |
+| teacher | 授课老师(expand)，[参考](#classteacher) |
+
+**响应示例**
+
+```
+Status: 200 OK
+```
+
+```json
+[
+  {
+    "date": "2015-01-01",
+    "wday_text": "星期四",
+    "courses": [
+      {
+        "id": 1,
+        "name": "数学",
+        "schedule_no": "1",
+        "type": "static",
+        "course_time": {
+          "started_at": "2016-10-25T10:15:17+08:00",
+          "ended_at": "2016-10-25T11:15:17+08:00"
+        },
+        "sign_time": {
+          "started_at": "2016-10-25T10:15:17+08:00",
+          "ended_at": "2016-10-25T11:15:17+08:00"
+        },
+        "teacher": {
+          "id": 250,
+          "name": "方红健",
+          "avatar": "https://cdn.com/avatar.png"
+        },
+      },
+      {
+        "id": null,
+        "name": null,
+        "schedule_no": "2",
+        "type": null,
+        "course_time": {
+          "started_at": "2016-10-25T10:15:17+08:00",
+          "ended_at": "2016-10-25T11:15:17+08:00"
+        },
+        "sign_time": {
+          "started_at": "2016-10-25T10:15:17+08:00",
+          "ended_at": "2016-10-25T11:15:17+08:00"
+        },
+        "teacher": {
+          "id": 251,
+          "name": "方志刚",
+          "avatar": "https://cdn.com/avatar.png"
+        },
+      }
+    ]
+  }
+]
+```
