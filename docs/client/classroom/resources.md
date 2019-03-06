@@ -950,3 +950,39 @@ Status: 200 OK
   }
 ]
 ```
+
+## 倒计时事件
+
+```
+GET /api/classes/:id/countdown_event
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| image_url | 背景图地址 |
+| title_color | 标题颜色 |
+| upper_title | 上标题 |
+| lower_title | 下标题 |
+| days_remaining | 剩余天数 |
+| end_at | 结束日期 |
+
+**响应示例**
+
+请求成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+{
+  "image_url": "https://cdn.image.com", 
+  "title_color": "#000000", 
+  "upper_title": "高考", 
+  "lower_title": "倒计时", 
+  "days_remaining": 5, 
+  "end_at": "2019-03-11"
+}
+```
