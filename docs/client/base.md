@@ -63,6 +63,7 @@ Status: 200 OK
             "course_schedules": false,
             "client_notis": false,
             "external_sections": [],
+            "countdown_event": true,
             "authorization": {
                 "card": false,
                 "facial_recog": true,
