@@ -246,7 +246,8 @@ Status: 200 OK
     "id": 1,
     "name": "卢志泽",
     "number": "1",
-    "avatar_url": "https://cdn.image/avatar.png"
+    "avatar_url": "https://cdn.image/avatar.png",
+    "classroom_name": "一年（6）班"
   },
   "contacts": [
     {
