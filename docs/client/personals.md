@@ -219,14 +219,18 @@ Status: 200 OK
 
 ## 学生联系人
 
+```
+GET /api/personal/contacts
+```
+
 **请求参数**
 
-| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
-| --- | --- | --- | --- | --- |
-| student_id | integer | 否 | 学生ID | 12 |
-| student_mobile   | string  | 否  | 学生手机号码  | 13811112222  |
+| 参数名         | 参数类型 | 必填 | 描述         | 示例        |
+|----------------|----------|------|--------------|-------------|
+| student_id     | integer  | 否   | 学生ID       | 12          |
+| student_mobile | string   | 否   | 学生手机号码 | 13811112222 |
 
-必须提供`student_mobiles`或`student_id`其中之一
+必须提供`student_mobile`或`student_id`其中之一
 
 **响应示例**
 
@@ -237,16 +241,24 @@ Status: 200 OK
 ```
 
 ```json
-[
-  {
-    "name": "王西",
-    "phone_number": "13311110000",
-    "avatar": "https://cdn.image/1.png"
+{
+  "student": {
+    "id": 1,
+    "name": "卢志泽",
+    "number": "1",
+    "avatar_url": "https://cdn.image/avatar.png"
   },
-  {
-    "name": "王东",
-    "phone_number": "13311113333",
-    "avatar": null
-  },
-]
+  "contacts": [
+    {
+      "name": "王西",
+      "phone_number": "13311110000",
+      "avatar": "https://cdn.image/1.png"
+    },
+    {
+      "name": "王东",
+      "phone_number": "13311113333",
+      "avatar": null
+    }
+  ]
+}
 ```
