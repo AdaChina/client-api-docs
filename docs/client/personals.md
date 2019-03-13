@@ -216,3 +216,37 @@ Status: 200 OK
   }
 ]
 ```
+
+## 学生联系人
+
+**请求参数**
+
+| 参数名 | 参数类型 | 必填 | 描述 | 示例 |
+| --- | --- | --- | --- | --- |
+| student_id | integer | 否 | 学生ID | 12 |
+| student_mobile   | string  | 否  | 学生手机号码  | 13811112222  |
+
+必须提供`student_mobiles`或`student_id`其中之一
+
+**响应示例**
+
+成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+[
+  {
+    "name": "王西",
+    "phone_number": "13311110000",
+    "avatar": "https://cdn.image/1.png"
+  },
+  {
+    "name": "王东",
+    "phone_number": "13311113333",
+    "avatar": null
+  },
+]
+```
