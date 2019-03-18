@@ -58,6 +58,14 @@ Status: 200 OK
       "ext_url": null
     },
     {
+      "type": "phone",
+      "icon": "https://cdn.com/icon.png",
+      "title": "亲情带哪壶",
+      "subtitle": "3",
+      "data": ["已有联系人"],
+      "ext_url": null
+    },
+    {
       "type": "external",
       "icon": "https://cdn.com/icon.png",
       "title": " 投放卡片",
@@ -229,8 +237,9 @@ GET /api/personal/contacts
 |----------------|----------|------|--------------|-------------|
 | student_id     | integer  | 否   | 学生ID       | 12          |
 | student_mobile | string   | 否   | 学生手机号码 | 13811112222 |
+| card_number   | string  | 否  | 学生卡号  | 0211231233  |
 
-必须提供`student_mobile`或`student_id`其中之一
+必须提供`student_mobile`, `student_id` 或 `card_number` 其中之一
 
 **响应示例**
 
@@ -246,7 +255,7 @@ Status: 200 OK
     "id": 1,
     "name": "卢志泽",
     "number": "1",
-    "avatar_url": "https://cdn.image/avatar.png",
+    "avatar": "https://cdn.image/avatar.png",
     "classroom_name": "一年（6）班"
   },
   "contacts": [
