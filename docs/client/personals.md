@@ -236,10 +236,10 @@ GET /api/personal/contacts
 | 参数名         | 参数类型 | 必填 | 描述         | 示例        |
 |----------------|----------|------|--------------|-------------|
 | student_id     | integer  | 否   | 学生ID       | 12          |
-| student_mobile | string   | 否   | 学生手机号码 | 13811112222 |
+| sim_serial | string   | 否   | 学生手机号码 | 13811112222 |
 | card_number   | string  | 否  | 学生卡号  | 0211231233  |
 
-必须提供`student_mobile`, `student_id` 或 `card_number` 其中之一
+必须提供`sim_serial`, `student_id` 或 `card_number` 其中之一
 
 **响应示例**
 
