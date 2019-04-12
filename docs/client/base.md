@@ -431,7 +431,7 @@ GET /weather
 | temperature    | 温度       |
 | skycon         | 天气情况   |
 | aqi            | 空气指数   |
-| pm25           | PM2.5 清空 |
+| pm25           | PM2.5情况 |
 | wind.direction | 风向       |
 | wind.speed     | 风速       |
 
