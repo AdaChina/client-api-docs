@@ -978,11 +978,45 @@ Status: 200 OK
 
 ```json
 {
-  "image_url": "https://cdn.image.com", 
-  "title_color": "#000000", 
-  "upper_title": "高考", 
-  "lower_title": "倒计时", 
-  "days_remaining": 5, 
+  "image_url": "https://cdn.image.com",
+  "title_color": "#000000",
+  "upper_title": "高考",
+  "lower_title": "倒计时",
+  "days_remaining": 5,
   "end_at": "2019-03-11"
 }
+```
+
+## 班级作业
+
+仅在拓维分支提供
+
+```
+GET /api/classes/:id/homeworks
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| teacher_name | 发布教师 |
+| title | 作业标题 |
+| content | 作业内容 |
+
+**响应示例**
+
+请求成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+[
+    {
+        "teacher_name": "test2--小学老师",
+        "title": "3月05日（星期二）作业",
+        "content": "今天作业画图"
+    }
+]
 ```
