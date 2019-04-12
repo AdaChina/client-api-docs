@@ -415,3 +415,56 @@ Status: 201 created
   "match_data": '[{"similarity": 0.615, "student_id": 12345}, {"similarity": 0.515, "student_id": 99999}]'
 }
 ```
+
+## 天气API
+
+仅在拓维版本提供
+
+```
+GET /weather
+```
+
+**响应字段**
+
+| 字段名         | 描述       |
+|----------------|------------|
+| temperature    | 温度       |
+| skycon         | 天气情况   |
+| aqi            | 空气指数   |
+| pm25           | PM2.5 清空 |
+| wind.direction | 风向       |
+| wind.speed     | 风速       |
+
+| 天气现象     | 代码                |
+|--------------|---------------------|
+| 晴（白天）   | CLEAR_DAY           |
+| 晴（夜间）   | CLEAR_NIGHT         |
+| 多云（白天） | PARTLY_CLOUDY_DAY   |
+| 多云（夜间   | PARTLY_CLOUDY_NIGHT |
+| 阴           | CLOUDY              |
+| 大风         | WIND                |
+| 雾霾         | HAZE                |
+| 雨           | RAIN                |
+| 雪           | SNOW                |
+
+
+**响应示例**
+
+成功响应:
+
+```
+Status: 200 OK
+```
+
+```json
+{
+    "temperature": 18,
+    "skycon": "PARTLY_CLOUDY_DAY",
+    "aqi": 31,
+    "pm25": "优",
+    "wind": {
+        "direction": "东北风",
+        "speed": 5.76
+    }
+}
+```
