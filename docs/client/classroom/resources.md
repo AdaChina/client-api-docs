@@ -1058,7 +1058,7 @@ Status: 200 OK
 ]
 ```
 
-## 值日
+## 班级值日
 
 仅在拓维分支提供
 
@@ -1087,12 +1087,32 @@ Status: 200 OK
     {
         "id": 1,
         "name": "扫地",
-        "students": "_"
+        "students": [
+            {
+                "id": 1,
+                "name": "王小明",
+                "avatar": "https://cdn.adachina.net/avatar1",
+                "card_number": 1234678
+            },
+            {
+                "id": 2,
+                "name": "张三",
+                "avatar": "https://cdn.adachina.net/avatar2",
+                "card_number": 123456
+            }
+        ]
     },
     {
         "id": 2,
         "name": "擦黑板",
-        "students": "_"
+        "students": [
+            {
+                "id": 1,
+                "name": "王小明",
+                "avatar": "https://cdn.adachina.net/avatar1",
+                "card_number": 1234678
+            }
+        ]
     }
 ]
 ```
