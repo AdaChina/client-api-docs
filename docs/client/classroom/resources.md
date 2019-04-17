@@ -1057,3 +1057,62 @@ Status: 200 OK
     }
 ]
 ```
+
+## 班级值日
+
+仅在拓维分支提供
+
+```
+GET /api/classes/:id/duties
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| id | 值日id |
+| name | 值日名称 |
+| students(expand) | 值日生列表 |
+
+**响应示例**
+
+请求成功响应
+
+```
+Status: 200 OK
+```
+
+```json
+[
+    {
+        "id": 1,
+        "name": "扫地",
+        "students": [
+            {
+                "id": 1,
+                "name": "王小明",
+                "avatar": "https://cdn.adachina.net/avatar1",
+                "card_number": 1234678
+            },
+            {
+                "id": 2,
+                "name": "张三",
+                "avatar": "https://cdn.adachina.net/avatar2",
+                "card_number": 123456
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "擦黑板",
+        "students": [
+            {
+                "id": 1,
+                "name": "王小明",
+                "avatar": "https://cdn.adachina.net/avatar1",
+                "card_number": 1234678
+            }
+        ]
+    }
+]
+```
