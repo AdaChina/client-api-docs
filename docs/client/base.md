@@ -426,14 +426,14 @@ GET /weather
 
 **响应字段**
 
-| 字段名         | 描述       |
-|----------------|------------|
-| temperature    | 温度       |
-| skycon         | 天气情况   |
-| aqi            | 空气指数   |
+| 字段名         | 描述      |
+|----------------|-----------|
+| temperature    | 温度      |
+| skycon         | 天气情况  |
+| pm25_num       | PM2.5数值 |
 | pm25           | PM2.5情况 |
-| wind.direction | 风向       |
-| wind.speed     | 风速       |
+| wind.direction | 风向      |
+| wind.speed     | 风速      |
 
 | 天气现象     | 代码                |
 |--------------|---------------------|
@@ -460,7 +460,7 @@ Status: 200 OK
 {
     "temperature": 18,
     "skycon": "PARTLY_CLOUDY_DAY",
-    "aqi": 31,
+    "pm25_num": 31,
     "pm25": "优",
     "wind": {
         "direction": "东北风",
