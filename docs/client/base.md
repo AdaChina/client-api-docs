@@ -133,6 +133,66 @@ Status: 200 OK
 }
 ```
 
+## 设备所在课室新高考课程表
+
+仅在拓维分支提供
+
+```
+GET /device/talkweb_dynamic_schedule
+```
+
+**响应字段**
+
+| 字段名 | 描述 |
+| --- | --- |
+| dayOfWeek | 周次(星期一: 1, 星期日: 7) |
+| courses | 课程 |
+| lessonOfDay | 节次 |
+| subjectName | 科目名称 |
+| teacher | 老师 |
+
+
+**响应示例**
+
+```
+Status: 200 OK
+```
+
+```json
+[
+    {
+        "dayOfWeek": 1,
+        "courses": [
+            {
+                "lessonOfDay": 1,
+                "subjectName": "英语",
+                "teacher": "傅冠红"
+            },
+            {
+                "lessonOfDay": 2,
+                "subjectName": "语文",
+                "teacher": "黄杰"
+            }
+        ]
+    },
+    {
+        "dayOfWeek": 2,
+        "courses": [
+            {
+                "lessonOfDay": 1,
+                "subjectName": "语文",
+                "teacher": "黄杰"
+            },
+            {
+                "lessonOfDay": 2,
+                "subjectName": "语文",
+                "teacher": "黄杰"
+            }
+        ]
+    }
+]
+```
+
 ## 设备可绑定的班级列表
 
 班级信息只提供id,类型和班级名
